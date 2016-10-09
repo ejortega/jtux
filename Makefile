@@ -1,5 +1,5 @@
 # CHANGE ME
-JAVA_INCLUDE = /usr/lib/jvm/java-6-openjdk-armhf/include
+JAVA_INCLUDE = /usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt/include
 INCLUDE = -I. -Iinclude -I$(JAVA_INCLUDE) -I$(JAVA_INCLUDE)/linux
 CFLAGS  = -Wall -D_REENTRANT -D_THREAD_SAFE -std=c99 -O2
 OBJECTS = jtux_clock.o jtux_dir.o jtux_file.o jtux_network.o \

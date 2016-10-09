@@ -331,13 +331,14 @@ JNIEXPORT void JNICALL Java_jtux_UNetwork_gethostname(JNIEnv *env, jclass obj,
 
 #ifdef _SC_HOST_NAME_MAX
 	errno = 0;
-	if ((size = sysconf(_SC_HOST_NAME_MAX)) == -1)
+	if ((size = sysconf(_SC_HOST_NAME_MAX)) == -1) {
 		if (errno == 0)
 			size = 1000;
 		else {
 			(void)setup_throw_errno(env, errno);
 			return;
 		}
+	}
 #endif
 	JTHROW_null(buf = malloc(size))
 	if (buf != NULL) {
